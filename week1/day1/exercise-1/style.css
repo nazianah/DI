@@ -1,0 +1,63 @@
+header{
+    margin: 10px;
+    font-weight: bold;
+    color: tomato;
+}
+nav a{
+    text-decoration: none;
+    color: orange;
+}
+nav a:hover{
+    text-decoration: underline;
+}
+.one {
+    margin-left: 2em;
+}
+.history ol{
+    list-style-type: upper-roman;
+}
+aside{
+    text-align: center;
+}
+aside img{
+    border: 10px solid orange;
+    height: 400px;
+}
+.info{
+    margin-top: 50px;
+}
+table {
+    
+    width: 75%;
+    margin: auto;
+   }
+   
+   td {
+    border: 1px solid black;
+   }
+   th{
+    border: 1px solid red;
+    color: red;
+   }
+   #small td{
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+   }
+   #data td{
+    padding: 10px;
+   }
+   thead tr {
+    text-align: center;
+   }
+   .lion{
+    text-align: center;
+   }
+   .lion img{
+    height: 400px;
+    margin-top: 50px;
+    border: 10px solid orange;
+   }
+   /* mark{
+    background-color: blue;
+   } */

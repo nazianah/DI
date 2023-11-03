@@ -1,0 +1,27 @@
+.main{
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    grid-template-rows: 2fr 2fr 2fr 2fr;
+    border: 10px ;
+    height: 500px;
+    width: 500px;
+    grid-gap: 15px;
+    
+    
+}
+.box1{
+    background-color: violet;
+}
+.box2{
+    background-color: aqua;
+}
+.box3{
+    background-color: violet;
+}
+.box4{
+    background-color: aqua;
+}
+.box5{
+    background-color: violet;
+}
+

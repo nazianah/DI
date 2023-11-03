@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    border: 2px solid red;
+    height: 5em;
+    color: white;
+    text-align: center;
+}
+.one, .two, .three{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.one{
+    background-color: blue;
+    width: 10%;
+    margin-left: 5px;
+}
+.two{
+    background-color: aqua;
+    width: 45%;
+}
+.three{
+    background-color: palevioletred;
+    width: 45%;
+    margin-right: 5px;
+}

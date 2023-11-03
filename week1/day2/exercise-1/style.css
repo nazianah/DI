@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+}
+.header{
+    height: 15em;
+}
+.header h1{
+    font-size: 3.5em;
+    font-weight: lighter;
+    position: relative;
+    margin-left: 3em;
+    margin-top: 1em;
+
+}
+.header h5{
+    font-size: .7rem;
+    color: rgb(180, 173, 173);
+    margin-bottom: 5em;
+    margin-top: 2em;
+    margin-left: 15em;
+}
+hr{
+
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.content{
+    display: grid;
+    grid-template-columns: 40em 70em;
+    grid-template-rows: 15em 15em;
+    margin-left: 10em;
+    gap: 10px;
+}
+.contact, .profile, .edu, .work{
+    display: flex;
+    flex-direction: column;
+}
+.contact h1{
+    position: absolute;
+}
+.icon{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.icon>p{
+    margin-top: 15px;
+}
+.profile{
+    width: 25em;
+}
+.profile>p{
+    margin-top: 10px;
+}
+.work{
+    width: 25em;
+}
+.work>p{
+    margin-top: 10px;
+}

@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    background-color: rgb(7, 61, 39);
+    color: white;
+    display:flex;
+    justify-content: center;
+    height: 40px;
+    align-items: center;
+}
+header h4{
+    margin-right: 30px;
+}
+header input{
+    background-color: rgb(25, 95, 156);
+    padding: 5px;
+    color: white;
+    border: 1px solid  rgb(25, 95, 156);
+}
+main{
+    background-image:url(img/R\ \(1\).jpeg) ; 
+    
+}
+main h2{
+    text-align: center;
+    color: rgb(139, 28, 28);
+    margin: 2em;
+}

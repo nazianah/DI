@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(img/pngtree-3d-world-map-with-shadow-light-image_329158.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 88vh;
+}
+header{
+    text-align: center;
+    margin-top: 5em;
+}
+.num{
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    position: relative;
+    margin-top: 5em;
+    text-align: center;
+}
+.num>div{
+    display: flex;
+    flex-direction: column
+}
+div>h1{
+    color: blue;
+
+}
+div>h6{
+    font-size: small;
+    color: rgb(89, 219, 219);
+
+}
+.info{
+    display: flex;
+    margin-top: 50px;   
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.one, .two, .three{
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+   
+}
+.one>div{
+    display: flex;
+    height: 5em;
+    flex-direction: column;
+    background-color: orange;
+    color: white;
+}
+.one{
+    flex-direction: column;
+    text-align: center;
+    background-color: gray;
+    width: 350px;
+}
+.one>p{
+    margin-bottom: 50px;
+    margin-top: 2em;
+}
+.one img{
+    height: 50px;
+    width: 50px;
+    position: relative;
+    margin-left: 150px;
+    border-radius: 26px;
+    margin-top: -25px;
+}
+.one p{
+    position: relative;
+}
+.two>div{
+    display: flex;
+    height: 5em;
+    flex-direction: column;
+    background-color: rgb(41, 52, 171);
+    color: white;
+}
+.two{
+    flex-direction: column;
+    text-align: center;
+    background-color: gray;
+    margin-top: 100px;
+    width: 350px;
+}
+.two>p{
+    margin-bottom: 50px;
+}
+.two img{
+    height: 50px;
+    width: 50px;
+    position: relative;
+    margin-left: 150px;
+    border-radius: 26px;
+    margin-top: -25px;
+}
+.two p{
+    position: relative;
+}
+.three>div{
+    display: flex;
+    height: 5em;
+    flex-direction: column;
+    background-color: rgb(46, 158, 102);
+    color: white;
+}
+.three{
+    flex-direction: column;
+    text-align: center;
+    background-color: gray;
+    width: 350px;
+}
+.three>p{
+    margin-bottom: 50px;
+}
+.three img{
+    height: 50px;
+    width: 50px;
+    position: relative;
+    margin-left: 150px;
+    border-radius: 26px;
+    margin-top: -25px;
+}
+.three p{
+    position: relative;
+}

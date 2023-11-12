@@ -19,7 +19,7 @@
 // }   
 //exercise#3
 // let userNumber = parseInt(prompt("Put a number"));
-// if (userNumber % 2 === 0) {
+// if (userNumber % 2 === 0) { 
 //     alert(`${userNumber} is an even number`);
 // } else {
 //     alert(`${userNumber} is an odd number`);

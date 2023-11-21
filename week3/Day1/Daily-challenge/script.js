@@ -40,7 +40,6 @@ planets.forEach(planet => {
         const moonDiv = createMoonDiv();
         planetDiv.appendChild(moonDiv);
         moonDiv.textContent = planet.moons;
-        moonDiv.style.marginLeft = i * 25 + "px";
-        
+        // moonDiv.style.marginLeft = i * 25 + "px";
     }
 });

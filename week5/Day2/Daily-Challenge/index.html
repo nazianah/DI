@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giphy API Random Example</title>
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin: 5px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            const apiKey = "hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My";
+            const form = document.getElementById('search-form');
+            const input = document.getElementById('search-input');
+            const gifContainer = document.getElementById('gif-container');
+            const deleteAllButton = document.getElementById('delete-all');
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                const searchTerm = input.value.trim();
+                if (searchTerm !== '') {
+                    fetchRandomGif(searchTerm);
+                }
+            });
+
+            deleteAllButton.addEventListener('click', function () {
+                gifContainer.innerHTML = "";
+            });
+
+            gifContainer.addEventListener('click', function (event) {
+                const target = event.target;
+                if (target.tagName === 'BUTTON' && target.className === 'delete-button') {
+                    gifContainer.removeChild(target.parentNode);
+                }
+            });
+
+            function fetchRandomGif(searchTerm) {
+                const apiUrl = `https://api.giphy.com/v1/gifs/random?tag=${searchTerm}&api_key=${apiKey}`;
+
+                fetch(apiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        const imageUrl = data.data.images.fixed_height.url;
+                        appendGif(imageUrl, searchTerm);
+                    })
+                    .catch(error => {
+                        console.error('Error fetching random gif:', error);
+                    });
+            }
+
+            function appendGif(imageUrl, category) {
+                const img = document.createElement('img');
+                img.src = imageUrl;
+
+                const deleteButton = document.createElement('button');
+                deleteButton.innerText = 'DELETE';
+                deleteButton.className = 'delete-button';
+
+                const gifDiv = document.createElement('div');
+                gifDiv.appendChild(img);
+                gifDiv.appendChild(deleteButton);
+                gifContainer.appendChild(gifDiv);
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Search form -->
+    <form id="search-form">
+        <input type="text" id="search-input" placeholder="Enter category">
+        <button type="submit">Fetch Gif</button>
+    </form>
+
+    <!-- Gif container -->
+    <div id="gif-container"></div>
+
+    <!-- Delete all button -->
+    <button id="delete-all">Delete All</button>
+</body>
+</html>

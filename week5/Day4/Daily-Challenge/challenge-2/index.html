@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="cityForm">
+        <label for="parisLatitude">Paris Latitude:</label>
+        <input type="text" id="parisLatitude" placeholder="Enter latitude">
+
+        <label for="parisLongitude">Paris Longitude:</label>
+        <input type="text" id="parisLongitude" placeholder="Enter longitude">
+
+        <label for="nyLatitude">New York Latitude:</label>
+        <input type="text" id="nyLatitude" placeholder="Enter latitude">
+
+        <label for="nyLongitude">New York Longitude:</label>
+        <input type="text" id="nyLongitude" placeholder="Enter longitude">
+
+        <button type="button" onclick="getSunrise()">Get Sunrise Times</button>
+    </form>
+
+    <div id="result"></div>
+    <script src="script.js"></script>
+</body>
+</html>

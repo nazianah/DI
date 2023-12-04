@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giphy API Example</title>
+    <style>
+        /* Add some styling to the images */
+        img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin: 5px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            const apiUrl = "https://api.giphy.com/v1/gifs/search?q=hilarious&rating=g&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My";
+
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", apiUrl);
+            xhr.send();
+
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    const response = JSON.parse(xhr.responseText);
+                    const picturesContainer = document.getElementById('pictures-container');
+
+                    // Clear previous content
+                    picturesContainer.innerHTML = "";
+
+                    if (response.data && response.data.length > 0) {
+                        response.data.forEach(function (gif) {
+                            // Create an image element for each GIF
+                            const img = document.createElement('img');
+                            img.src = gif.images.fixed_height.url;
+                            picturesContainer.appendChild(img);
+                        });
+                    } else {
+                        console.log("No GIFs found");
+                    }
+                } else {
+                    console.error(`Error ${xhr.status}: ${xhr.statusText}`);
+                }
+            };
+
+            xhr.onerror = function () {
+                console.error("Network error occurred");
+            };
+        }
+    </script>
+</head>
+<body>
+    <!-- Container to display the GIFs -->
+    <div id="pictures-container"></div>
+</body>
+</html>

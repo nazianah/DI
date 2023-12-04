@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giphy API Example</title>
+    <style>
+        /* Add some styling to the images */
+        img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin: 5px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let searchtext = "sun";
+            let apiKey = "hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My";
+            let apiUrl = `https://api.giphy.com/v1/gifs/search?q=${searchtext}&rating=g&api_key=${apiKey}&limit=10`;
+            
+            let ajax = new XMLHttpRequest();
+            ajax.open('GET', apiUrl);
+            ajax.send();
+
+            ajax.onload = function () {
+                if (ajax.status === 200) {
+                    let response = JSON.parse(ajax.responseText);
+                    let picturesContainer = document.getElementById('pictures-container');
+
+                    // Clear previous content
+                    picturesContainer.innerHTML = "";
+
+                    if (response.data && response.data.length > 0) {
+                        response.data.forEach(function (gif) {
+                            // Create an image element for each GIF
+                            let img = document.createElement('img');
+                            img.src = gif.images.fixed_height.url;
+                            picturesContainer.appendChild(img);
+                        });
+                    } else {
+                        console.log("No GIFs found");
+                    }
+                } else {
+                    console.error(`Error ${ajax.status}: ${ajax.statusText}`);
+                }
+            };
+        }
+    </script>
+</head>
+<body>
+    <!-- Container to display the GIFs -->
+    <div id="pictures-container"></div>
+</body>
+</html>

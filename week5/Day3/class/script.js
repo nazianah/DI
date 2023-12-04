@@ -1,5 +1,6 @@
 let bankAmount = 1000
 let expense = 2500
+
 let bankPromise = new Promise((resolve, reject) => {
     if (expense<bankAmount) {
         resolve(expense);

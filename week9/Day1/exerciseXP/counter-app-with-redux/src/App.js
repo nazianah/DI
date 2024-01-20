@@ -1,19 +1,15 @@
 import React from 'react';
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import reducer from './reducers';
+import Counter from './components/Counter';
 
-import './App.css'
-
-import Counter from './components/counter'
-import counterReducer from './reducers/index'
-
-const store = createStore(counterReducer)
+const store = createStore(reducer);
 
 function App() {
   return (
     <Provider store={store}>
-    <div className='counter'><Counter /></div>    
-      
+      <Counter />
     </Provider>
   );
 }

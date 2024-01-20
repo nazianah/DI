@@ -1,44 +1,19 @@
-import React, {Component} from 'react'
-// import {Button} from 'semantic-ui-react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { 
-    increaseCount,
-    decreaseCount
-} from '../actions/counter'
+import React from 'react';
+import { connect } from 'react-redux';
+import { INCREASE_COUNT, DECREASE_COUNT } from '../actions';
 
-class Counter extends Component {
-
-static mapStateToProps = state => {
-    return {
-        count: state.count
-    }
-}
-
-static mapDispatchToProps = dispatch => {
-    return bindActionCreators({
-        increaseCount,
-        decreaseCount
-    },
-    dispatch
-    )
-}
-
-render() {
-    const { increaseCount, decreaseCount } = this.props
-
-    return(
+function Counter({ count, dispatch }) {
+    return (
         <div>
-        <button onClick={increaseCount} >+</button>
-        <span>{this.props.count}</span>
-        <button onClick={decreaseCount}>-</button>
+            <button onClick={() => dispatch({ type: DECREASE_COUNT })}>-</button>
+            <span>{count}</span>
+            <button onClick={() => dispatch({ type: INCREASE_COUNT })}>+</button>
         </div>
-    )
+    );
 }
 
-}
+const mapStateToProps = state => ({
+    count: state.count
+});
 
-export default connect(
-    Counter.mapStateToProps,
-    Counter.mapDispatchToProps
-)(Counter)
+export default connect(mapStateToProps)(Counter);

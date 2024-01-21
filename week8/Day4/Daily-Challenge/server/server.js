@@ -1,7 +1,7 @@
 const cors = require('cors');
 const express = require('express');
 const app = express();
-const port = 5000;
+const port = 5005;
 app.use(cors());
 app.use(express.json());
 app.get('/api/hello', (req, res) => {

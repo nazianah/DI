@@ -20,6 +20,7 @@ function App() {
       <h3>{user.firstName}</h3>
       <h3>{user.lastName}</h3>
       <UserFavoriteAnimals favoriteAnimals={user.favAnimal} />
+      <Exercise />
     </div>
   );
 }

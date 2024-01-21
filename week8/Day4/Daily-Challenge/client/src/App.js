@@ -9,7 +9,7 @@ class App extends React.Component {
 
   async componentDidMount() {
     try {
-      const response = await fetch('http://localhost:5000/api/hello');
+      const response = await fetch('http://localhost:5005/api/hello');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -23,7 +23,7 @@ class App extends React.Component {
   handleSubmit = async e => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/api/world', {
+      const response = await fetch('http://localhost:5005/api/world', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

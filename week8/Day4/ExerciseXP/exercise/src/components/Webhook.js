@@ -8,11 +8,11 @@ class Webhook extends React.Component {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            key1: 'Yu',
-            email: 'awushu6@gmail.com',
-            name: 'Tanikete',
-            lastname: 'Sookeera',
-            age: 23,
+            key1: 'Zi',
+            email: 'nazianah.umme@gmail.com',
+            name: 'Nazianah',
+            lastname: 'Jhakri',
+            age: 28,
           }),
         });
       
